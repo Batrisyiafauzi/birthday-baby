@@ -1,0 +1,953 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For My Favourite boyfriend  ♡</title>
+
+<style>
+:root {
+    --cream: #F4F8FC;
+    --peach: #B8D8F5;
+    --yellow: #DCEBFA;
+    --sage: #8EB5D8;
+    --pink: #A8C7E5;
+    --green: #252B33;
+    --text: #34495E;
+    --blue: #52799E;
+    --white: #FFFFFF;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: Arial, sans-serif;
+    background: var(--cream);
+    color: var(--text);
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* OPENING PAGE */
+
+#opening {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: linear-gradient(
+        145deg, #8EB5D8, #F4F8FC, #B8D8F5
+    );
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+    transition: opacity .8s, visibility .8s;
+}
+
+#opening.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.opening-content { max-width: 450px; }
+
+.opening-content h1 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: clamp(38px, 7vw, 58px);
+    line-height: 1.3;
+    margin: 22px 0;
+    color: var(--green);
+}
+
+.opening-content h1 span,
+.hero h1 span {
+    color: var(--blue);
+    font-style: italic;
+}
+
+.opening-content p {
+    font-size: 13px;
+    line-height: 1.9;
+    color: #637F9C;
+}
+
+.open-button,
+.action-button {
+    margin-top: 28px;
+    padding: 15px 27px;
+    border: 1px solid var(--green);
+    border-radius: 30px;
+    background: var(--green);
+    color: white;
+    font-size: 12px;
+    letter-spacing: 1px;
+    transition: .3s;
+}
+
+.open-button:hover,
+.action-button:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    transform: translateY(-3px);
+}
+
+/* HERO */
+
+.hero {
+    min-height: 85vh;
+    padding: 95px 20px 0;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    background: linear-gradient(
+        180deg,
+        #8EB5D8 0%,
+        #B8D8F5 38%,
+        #F4F8FC 72%,
+        #DCEBFA 100%
+    );
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #FFF4D6;
+    position: absolute;
+    top: 65px;
+    right: 13%;
+    box-shadow: 0 0 45px #FFF4D680;
+    animation: glow 4s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    to { box-shadow: 0 0 65px #FFF4D6B0; }
+}
+
+.cloud {
+    position: absolute;
+    font-size: 42px;
+    opacity: .65;
+    animation: clouds 24s linear infinite;
+}
+
+.cloud-one { top: 115px; left: -80px; }
+
+.cloud-two {
+    top: 205px;
+    left: -120px;
+    animation-delay: 9s;
+}
+
+@keyframes clouds {
+    from { transform: translateX(0); }
+    to { transform: translateX(120vw); }
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.15;
+    margin: 25px 0;
+    color: var(--green);
+}
+
+.intro,
+.description {
+    color: #637F9C;
+    font-size: 14px;
+    line-height: 1.9;
+    max-width: 460px;
+    margin: auto;
+}
+
+/* HEART-SHAPED PHOTO */
+
+.heart-photo {
+    width: 200px;
+    height: 150px;
+    margin: 15px auto;
+    animation: heartFloat 3s ease-in-out infinite;
+    filter: drop-shadow(0 5px 8px #52799E40);
+}
+
+.heart-photo svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow: visible;
+}
+
+@keyframes heartFloat {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-6px) scale(1.04);
+    }
+}
+
+/* CYCLING ROAD */
+
+.road {
+    height: 90px;
+    background: #252B33;
+    margin: 40px -20px 0;
+    position: relative;
+    overflow: hidden;
+    border-top: 5px solid #8EB5D8;
+}
+
+.road::after {
+    content: "";
+    position: absolute;
+    top: 43px;
+    left: 0;
+    width: 200%;
+    border-top: 3px dashed #F4F8FC;
+    animation: moveRoad 3s linear infinite;
+}
+
+.moving-bike {
+    position: absolute;
+    top: 5px;
+    left: -80px;
+    font-size: 43px;
+    z-index: 2;
+    animation: cycling 10s linear infinite;
+}
+
+@keyframes moveRoad {
+    to { transform: translateX(-100px); }
+}
+
+@keyframes cycling {
+    from { left: -80px; }
+    to { left: 110%; }
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 85px 0;
+    text-align: center;
+}
+
+.section-heading { padding: 0 20px; }
+
+h2 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: clamp(29px, 4vw, 42px);
+    margin: 18px 0;
+    color: var(--green);
+}
+
+/* MOVING PHOTO CAROUSEL */
+
+.photo-section {
+    overflow: hidden;
+    background: var(--cream);
+}
+
+.photo-track {
+    display: flex;
+    width: max-content;
+    gap: 22px;
+    margin-top: 40px;
+    animation: photoLoop 45s linear infinite;
+}
+
+.photo-track:hover {
+    animation-play-state: paused;
+}
+
+.photo-group {
+    display: flex;
+    flex-shrink: 0;
+    gap: 22px;
+}
+
+.photo-card {
+    width: 230px;
+    flex-shrink: 0;
+    padding: 12px 12px 20px;
+    background: white;
+    border-radius: 14px;
+    border-bottom: 5px solid var(--sage);
+    box-shadow: 0 8px 25px #252B3318;
+    transition: transform .3s;
+}
+
+.photo-card:nth-child(3n + 2) {
+    border-bottom-color: var(--peach);
+}
+
+.photo-card:nth-child(3n) {
+    border-bottom-color: var(--yellow);
+}
+
+.photo-card:hover {
+    transform: translateY(-8px) rotate(-2deg);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 280px;
+    display: block;
+    object-fit: cover;
+    border-radius: 9px;
+    background: #DCEBFA;
+}
+
+.photo-card p {
+    margin-top: 14px;
+    font-family: Georgia, serif;
+    font-size: 15px;
+    color: var(--green);
+}
+
+@keyframes photoLoop {
+    from { transform: translateX(0); }
+    to { transform: translateX(calc(-50% - 11px)); }
+}
+
+/* BIRTHDAY LETTER */
+
+.letter-section {
+    padding: 85px 20px;
+    background: linear-gradient(
+        135deg, #DCEBFA, #F4F8FC, #C8DFF5
+    );
+}
+
+#letter {
+    display: none;
+    max-width: 550px;
+    margin: 35px auto 0;
+    padding: 35px;
+    background: #FFFFFF;
+    border: 1px solid #DCEBFA;
+    border-radius: 18px;
+    text-align: left;
+    line-height: 2;
+    font-size: 14px;
+    color: #5E7893;
+    box-shadow: 0 8px 25px #252B3312;
+}
+
+#letter h3 {
+    font-family: Georgia, serif;
+    font-weight: normal;
+    font-size: 26px;
+    color: var(--green);
+    margin-bottom: 20px;
+}
+
+/* MUSIC BUTTON */
+
+.music-control {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 20;
+    border: 1px solid #C8DDF2;
+    border-radius: 30px;
+    background: #F4F8FC;
+    color: #252B33;
+    padding: 13px 18px;
+    font-size: 12px;
+    box-shadow: 0 4px 18px #252B3318;
+}
+
+/* FALLING HEARTS AND CONFETTI */
+
+.heart,
+.confetti-piece {
+    position: fixed;
+    top: -30px;
+    pointer-events: none;
+    z-index: 110;
+}
+
+.heart {
+    color: #7FAED9;
+    animation: floatDown 4s linear forwards;
+}
+
+.confetti-piece {
+    animation: confettiFall 3s linear forwards;
+}
+
+@keyframes floatDown {
+    to {
+        transform: translateY(110vh) rotate(180deg);
+        opacity: 0;
+    }
+}
+
+@keyframes confettiFall {
+    to {
+        transform: translateY(110vh) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 38px 20px;
+    background: #252B33;
+    color: #DCEBFA;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 2;
+}
+
+/* FAKE ERROR POPUP */
+
+.error-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(15, 25, 38, 0.55);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    z-index: 99999;
+}
+
+.error-box {
+    background: #F4F8FC;
+    width: 330px;
+    max-width: 100%;
+    border: 1px solid #A8C7E5;
+    border-radius: 8px;
+    box-shadow: 0 10px 35px #0005;
+    overflow: hidden;
+    color: #252B33;
+    animation: errorPop .25s ease;
+}
+
+.error-header {
+    background: #DCEBFA;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+}
+
+.error-header button {
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #252B33;
+    background: transparent;
+}
+
+.error-content {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    padding: 22px 18px;
+}
+
+.error-icon { font-size: 32px; }
+
+.error-content h3 {
+    font-size: 17px;
+    margin: 0 0 8px;
+}
+
+.error-content p {
+    font-size: 13px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.error-buttons {
+    padding: 0 18px 18px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.error-buttons button {
+    min-width: 75px;
+    padding: 8px 18px;
+    border: 1px solid #8EB5D8;
+    border-radius: 4px;
+    background: #DCEBFA;
+    color: #252B33;
+    cursor: pointer;
+}
+
+.error-buttons button:hover {
+    background: #B8D8F5;
+}
+
+@keyframes errorPop {
+    from {
+        transform: scale(.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 650px) {
+    .hero { padding-top: 85px; }
+
+    .sun {
+        width: 70px;
+        height: 70px;
+        right: 8%;
+        top: 45px;
+    }
+
+    section {
+        padding-top: 65px;
+        padding-bottom: 65px;
+    }
+
+    .photo-card { width: 190px; }
+    .photo-card img { height: 240px; }
+
+    .photo-track,
+    .photo-group { gap: 14px; }
+
+    #letter { padding: 25px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .photo-track,
+    .sun,
+    .cloud,
+    .heart-photo,
+    .moving-bike {
+        animation: none;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<audio id="birthdaySong"
+       src="Batas Senja - Nanti Kita Seperti Ini Lirik Lagu.mp3"
+       loop preload="auto"></audio>
+
+<!-- OPENING PAGE -->
+
+<div id="opening">
+    <div class="opening-content">
+        <h1>
+            For you,<br>
+            <span>my favourite boyfriend!!.</span>
+        </h1>
+
+        <p>
+            Ready eh sayang nak hack phone baby ni HEHEHEH!!
+        </p>
+
+        <button class="open-button" onclick="showErrorPopup()">
+            TEKAN SINI BABY♡
+        </button>
+    </div>
+</div>
+
+<!-- FAKE ERROR POPUP -->
+
+<div id="errorPopup" class="error-overlay">
+    <div class="error-box">
+        <div class="error-header">
+            <span>⚠️ System Message</span>
+            <button onclick="nextError()" aria-label="Close">×</button>
+        </div>
+
+        <div class="error-content">
+            <div class="error-icon" id="errorIcon">❌</div>
+            <div>
+                <h3 id="errorTitle">ERROR 404!</h3>
+                <p id="errorMessage">
+                    Please press OK to continue.
+                </p>
+            </div>
+        </div>
+
+        <div class="error-buttons">
+            <button onclick="nextError()" id="errorButton">OK</button>
+        </div>
+    </div>
+</div>
+
+<!-- HERO SECTION -->
+
+<header class="hero">
+    <div class="sun"></div>
+    <div class="cloud cloud-one">☁</div>
+    <div class="cloud cloud-two">☁</div>
+
+    <div class="hero-content">
+        <h1>
+            Happy Birthday,<br>
+            <span>baby Sayang!!!.</span>
+        </h1>
+
+        <p class="intro">
+            TADAAAAA!!!! heheheh comel kan kan
+            baby scroll sampai bawah tau hehe..
+        </p>
+
+        <!-- HEART-SHAPED PHOTO -->
+
+        <div class="heart-photo">
+            <svg viewBox="0 0 200 180"
+                 xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <clipPath id="heartClip">
+                        <path d="M100 170
+                                 C85 155 10 105 10 55
+                                 C10 5 75 0 100 45
+                                 C125 0 190 5 190 55
+                                 C190 105 115 155 100 170 Z"/>
+                    </clipPath>
+                </defs>
+
+                <image href="cute.jpeg"
+                       x="0" y="0"
+                       width="200" height="180"
+                       preserveAspectRatio="xMidYMid slice"
+                       clip-path="url(#heartClip)"/>
+
+                <path d="M100 170
+                         C85 155 10 105 10 55
+                         C10 5 75 0 100 45
+                         C125 0 190 5 190 55
+                         C190 105 115 155 100 170 Z"
+                      fill="none"
+                      stroke="#F4F8FC"
+                      stroke-width="5"/>
+            </svg>
+        </div>
+    </div>
+
+    <!-- CYCLING ROAD -->
+
+    <div class="road">
+        <div class="moving-bike">🚴🏻‍♂️</div>
+    </div>
+</header>
+
+<!-- PHOTO MEMORIES -->
+
+<section id="memories" class="photo-section">
+    <div class="section-heading">
+        <h2>My favourite memories. ♡</h2>
+        <p class="description">
+            A little collection of my favourite pictures of you.
+        </p>
+    </div>
+
+    <div class="photo-track">
+        <div class="photo-group">
+            <div class="photo-card">
+                <img src="first.jpeg" alt="Memory 1">
+                <p>our first meet ♡</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="sembile.jpeg" alt="Memory 2">
+                <p>my favourite rider 🚴🏻‍♂️</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="third.jpeg" alt="Memory 3">
+                <p>semat woo dia!!</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="fourth.jpeg" alt="Memory 4">
+                <p>Atototo comeinye dia ♡</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="fifth.jpeg" alt="Memory 5">
+                <p>ni fav sayang jugak hehe</p>
+            </div>
+
+            <div class="photo-card">
+                <img src="sixth.jpeg" alt="Memory 6">
+                <p>BAHAHAHAHAHA sorry baby tapi ni paling win</p>
+            </div>
+        </div>
+
+        <!-- The second group is duplicated by JavaScript -->
+        <div class="photo-group" aria-hidden="true"></div>
+    </div>
+</section>
+
+<!-- BIRTHDAY LETTER -->
+
+<section class="letter-section">
+    <h2>Something for you. 💌</h2>
+    <p class="description">
+        baca slow slow ye ni ucapan sayang untuk special day baby harap tak tercekik terkentut lalu terberak.
+    </p>
+
+    <button class="action-button" onclick="toggleLetter()">
+        SINI SINI TEKAN NI BABY!!
+    </button>
+
+    <div id="letter">
+        <h3>To my favourite boy, ♡</h3>
+
+        happy birthday baby sayangggg 🤍!! semoga baby panjang umur,
+        murah rezeki, sentiasa sihat and dipermudahkan segala urusan.
+        semoga semua impian baby tercapai satu per satu and semoga Allah
+        sentiasa lindungi baby walau dekat mana pun baby pergi tauuu 🤍🫶🏻
+
+        <br><br>
+
+        sayang bersyukur sangat sebab baby hadir dalam hidup sayang.
+        terima kasih sebab jadi seseorang yang sangat special untuk sayang.
+        sayang doakan baby sentiasa bahagia, berjaya dalam apa pun yang
+        baby buat and sentiasa kuat hadap ape ape cabaran tau.
+        jangan lupa jaga diri baik-baik, jangan stres stress, tolong
+        kerapkan makan nasi ye 🤨 and rehat kalau penat tau baby.
+
+        <br><br>
+
+        sayang harap kita dapat buat banyak kenangan sama-sama and sayang nak minta maaf kalau ada terkasar 
+        bahasa minta maaf jugak baby kena layan perangai sayang tak konsisten ni hm sorry tau.
+        semoga tahun ni banyak benda baik untuk baby.Ingat sayang sentiasa support baby tak kire jauh or dekat
+        sayang sentiasa ada untuk baby.
+        sayang baby sooooo muchhh, muahhh banyak banyak hehe😚
+
+        <br><br>
+
+        With love, sayang yang nakal,degil,imut dan cantik hehe. ♡
+    </div>
+</section>
+
+<footer>
+    SAYANG BUAT SENDIRI LA EK..SAYANG BUAT GUNA KEPINTARAN DAN KEPAKARAN IT SAYANG TAU ♡ HALAL LA BASIKAL BAWAK REVERSE AHAHAHAH
+    <br>
+    Bat holdings sdn bhd | No Tel : 12234008tekantekantakdapat
+</footer>
+
+<button id="musicButton" class="music-control"
+        onclick="toggleMusic()" hidden>
+    ♫ Music: On
+</button>
+
+<script>
+/* ERROR POPUP MESSAGES */
+
+const errorMessages = [
+    {
+        icon: "❌",
+        title: "ERROR 404!",
+        message: "Please press OK to continue.",
+        button: "OK"
+    },
+    {
+        icon: "⚠️",
+        title: "WARNING!",
+        message: "Too handsome for this website. Are you sure you want to continue?",
+        button: "YES"
+    },
+    {
+        icon: "🤨",
+        title: "SYSTEM ERROR",
+        message: "Hmm... you clicked the wrong button. Try again!",
+        button: "TRY AGAIN"
+    },
+    {
+        icon: "💗",
+        title: "URGENT MESSAGE!",
+        message: "Press OK to fix this problem.",
+        button: "OK"
+    },
+    {
+        icon: "😭",
+        title: "ERROR!",
+        message: "HAHAHA kena prank! Okay baby, ready untuk kena hack",
+        button: "CONTINUE"
+    }
+];
+
+let errorIndex = 0;
+
+function showErrorPopup() {
+    errorIndex = 0;
+    document.getElementById("errorPopup").style.display = "flex";
+    updateErrorPopup();
+}
+
+function updateErrorPopup() {
+    const error = errorMessages[errorIndex];
+
+    document.getElementById("errorIcon").textContent = error.icon;
+    document.getElementById("errorTitle").textContent = error.title;
+    document.getElementById("errorMessage").textContent = error.message;
+    document.getElementById("errorButton").textContent = error.button;
+
+    const box = document.querySelector(".error-box");
+    box.style.animation = "none";
+    void box.offsetWidth;
+    box.style.animation = "errorPop .25s ease";
+}
+
+function nextError() {
+    errorIndex++;
+
+    if (errorIndex < errorMessages.length) {
+        updateErrorPopup();
+    } else {
+        document.getElementById("errorPopup").style.display = "none";
+        openSurprise();
+    }
+}
+
+/* MUSIC AND SURPRISE */
+
+const song = document.getElementById("birthdaySong");
+const musicButton = document.getElementById("musicButton");
+
+function openSurprise() {
+    document.getElementById("opening").classList.add("hide");
+
+    musicButton.hidden = false;
+    song.volume = 0.45;
+
+    song.play().then(() => {
+        musicButton.textContent = "♫ Music: On";
+    }).catch(() => {
+        musicButton.textContent = "♫ Tap to play";
+    });
+
+    makeHearts();
+    launchConfetti();
+}
+
+function toggleMusic() {
+    if (song.paused) {
+        song.play().then(() => {
+            musicButton.textContent = "♫ Music: On";
+        }).catch(() => {
+            musicButton.textContent = "♫ Tap to play";
+        });
+    } else {
+        song.pause();
+        musicButton.textContent = "♫ Music: Off";
+    }
+}
+
+/* INFINITE PHOTO CAROUSEL */
+
+const photoGroups = document.querySelectorAll(".photo-group");
+photoGroups[1].innerHTML = photoGroups[0].innerHTML;
+
+/* OPEN AND CLOSE THE LETTER */
+
+function toggleLetter() {
+    const letter = document.getElementById("letter");
+    const button = document.querySelector(".letter-section .action-button");
+
+    if (letter.style.display === "block") {
+        letter.style.display = "none";
+        button.textContent = "SINI SINI TEKAN NI BABY!!";
+    } else {
+        letter.style.display = "block";
+        button.textContent = "CLOSE YOUR LETTER ↑";
+        letter.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+        });
+        makeHearts();
+    }
+}
+
+/* MAKE A WISH */
+
+function makeWish() {
+    document.getElementById("wish").textContent =
+        "♡ may all your wishes come true ♡";
+
+    makeHearts();
+    launchConfetti();
+}
+
+/* FALLING HEARTS */
+
+function makeHearts() {
+    for (let i = 0; i < 14; i++) {
+        const heart = document.createElement("span");
+
+        heart.className = "heart";
+        heart.textContent = Math.random() > 0.5 ? "♡" : "♥";
+        heart.style.left = Math.random() * 100 + "vw";
+        heart.style.fontSize = (14 + Math.random() * 15) + "px";
+        heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+
+        document.body.appendChild(heart);
+        setTimeout(() => heart.remove(), 6500);
+    }
+}
+
+/* PASTEL BLUE CONFETTI */
+
+function launchConfetti() {
+    const colours = [
+        "#A7D0F2",
+        "#C8E2FA",
+        "#DCEBFA",
+        "#8EB5D8",
+        "#FFFFFF",
+        "#252B33"
+    ];
+
+    for (let i = 0; i < 45; i++) {
+        const piece = document.createElement("span");
+
+        piece.className = "confetti-piece";
+        piece.textContent = "✦";
+        piece.style.left = Math.random() * 100 + "vw";
+        piece.style.color =
+            colours[Math.floor(Math.random() * colours.length)];
+        piece.style.fontSize = (10 + Math.random() * 12) + "px";
+        piece.style.animationDuration = (2 + Math.random() * 3) + "s";
+
+        document.body.appendChild(piece);
+        setTimeout(() => piece.remove(), 5500);
+    }
+}
+</script>
+
+</body>
+</html>
